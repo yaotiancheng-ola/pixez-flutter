@@ -38,7 +38,7 @@ import 'package:pixez/page/saucenao/saucenao_page.dart';
 import 'package:pixez/page/search/search_page.dart';
 import 'package:receive_sharing_intent/receive_sharing_intent.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uni_links2/uni_links.dart';
+// import 'package:uni_links2/uni_links.dart';
 
 import 'ranking/rank_store.dart';
 
@@ -320,17 +320,17 @@ class _AndroidHelloPageState extends State<AndroidHelloPage> {
             ));
   }
 
-  late StreamSubscription _sub;
+  // late StreamSubscription _sub;
 
   initPlatform() async {
-    try {
-      Uri? initialLink = await getInitialUri();
-      if (initialLink != null) Leader.pushWithUri(context, initialLink);
-      _sub = uriLinkStream
-          .listen((Uri? link) => Leader.pushWithUri(context, link!));
-    } catch (e) {
-      print(e);
-    }
+    // try {
+    //   Uri? initialLink = await getInitialUri();
+    //   if (initialLink != null) Leader.pushWithUri(context, initialLink);
+    //   _sub = uriLinkStream
+    //       .listen((Uri? link) => Leader.pushWithUri(context, link!));
+    // } catch (e) {
+    //   print(e);
+    // }
   }
 
   initPermission() async {
@@ -353,7 +353,7 @@ class _AndroidHelloPageState extends State<AndroidHelloPage> {
     _intentDataStreamSubscription.cancel();
     _textStreamSubscription.cancel();
     _pageController.dispose();
-    _sub.cancel();
+    // _sub.cancel();
     super.dispose();
   }
 

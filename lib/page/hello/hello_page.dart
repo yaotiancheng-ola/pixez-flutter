@@ -33,7 +33,7 @@ import 'package:pixez/page/preview/preview_page.dart';
 import 'package:pixez/page/search/search_page.dart';
 import 'package:pixez/widgetkit_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uni_links2/uni_links.dart';
+// import 'package:uni_links2/uni_links.dart';
 
 class HelloPage extends StatefulWidget {
   @override
@@ -41,13 +41,13 @@ class HelloPage extends StatefulWidget {
 }
 
 class _HelloPageState extends State<HelloPage> {
-  late StreamSubscription _sub;
+  // late StreamSubscription _sub;
   late int index;
   late PageController _pageController;
 
   @override
   void dispose() {
-    _sub.cancel();
+    // _sub.cancel();
     _pageController.dispose();
     super.dispose();
   }
@@ -77,14 +77,14 @@ class _HelloPageState extends State<HelloPage> {
   }
 
   Future<void> initLinksStream() async {
-    try {
-      Uri? initialLink = await getInitialUri();
-      if (initialLink != null) Leader.pushWithUri(context, initialLink);
-      _sub = uriLinkStream
-          .listen((Uri? link) => Leader.pushWithUri(context, link!));
-    } catch (e) {
-      print(e);
-    }
+    // try {
+    //   Uri? initialLink = await getInitialUri();
+    //   if (initialLink != null) Leader.pushWithUri(context, initialLink);
+    //   _sub = uriLinkStream
+    //       .listen((Uri? link) => Leader.pushWithUri(context, link!));
+    // } catch (e) {
+    //   print(e);
+    // }
   }
 
   List<Widget> _lists = <Widget>[
